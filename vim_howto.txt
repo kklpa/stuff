@@ -1,5 +1,4 @@
-﻿asd
-gg  - top dokumentu
+﻿gg  - top dokumentu
 G - bot dokumentu
 dd - usuwa linie
 y - kopiuje linie
