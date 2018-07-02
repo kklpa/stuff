@@ -1,0 +1,24 @@
+gg  - top dokumentu
+G - bot dokumentu
+dd - usuwa linie
+y - kopiuje linie
+p - wkleja linie
+u - undo
+ctrl+r - redo
+
+v - zaznaczanie od kursora
+V - zaznaczanie całych linii
+potem można: 
+y - kopiuje 
+d - kasuje,
+p - wkleja
+
+/ - find
+n - nastepne wystapienie
+
+replace
+:s(substitute)
+
+:s/foo/bar/g   zamienia w danej lini foo na bar
+:%s/foo/bar/g  zamienia w calym pliku foo na bar
+:%s/foo/bar/gc zamienia w calym pliku foo na bar ale pyta o potwierdzenie 
