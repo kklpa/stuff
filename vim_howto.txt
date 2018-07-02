@@ -1,4 +1,4 @@
-asd
+﻿asd
 gg  - top dokumentu
 G - bot dokumentu
 dd - usuwa linie
@@ -17,9 +17,15 @@ p - wkleja
 / - find
 n - nastepne wystapienie
 
+$ - przesuwa kursor na koniec linie
+przykład(copy and replace):
+v - zaznaczenie, $ - do końca lini, y - kopiuj, w innej lini to samo tylko na końcu y 
+
 replace
 :s(substitute)
 
 :s/foo/bar/g   zamienia w danej lini foo na bar
 :%s/foo/bar/g  zamienia w calym pliku foo na bar
 :%s/foo/bar/gc zamienia w calym pliku foo na bar ale pyta o potwierdzenie 
+
+grep -rnw 'patch' -e 'pattern'
