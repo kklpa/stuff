@@ -28,6 +28,3 @@ replace
 :%s/foo/bar/gc zamienia w calym pliku foo na bar ale pyta o potwierdzenie 
 
 grep -rnw 'patch' -e 'pattern'
-
-
-asd
