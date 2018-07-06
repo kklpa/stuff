@@ -1,0 +1,20 @@
+git init					tworzy repo gita w katalogu, w którym się znajdujemy
+git add <nazwa>				dodaje plik/pliki* do repo
+git status					pokazuje aktualny stan plikow w repo
+git commit					zapisuje zmiany w komicie
+paramter:
+-a, all						wszystkie zmienione pliki
+-m, message					nazwa commitu	
+
+git branch <nazwa>			tworzy nową gałąź <nazwa>
+git checkout <nazwa>		przełącza na gałąź <nazwa>
+git checkout -b <nazwa>		tworzy gałaź <nazwa> i się na nią przełącza
+git merge <nazwa>			przyłącza gałąź <nazwa> do obecnej gałęzi, na której pracujemy
+git status					powie więcej w przypadku konfliktów
+git mergetool				otwiera edytor i graficznie przedstawia konflikty
+git branch -d <nazwa>		usuwa gałąź <nazwa> jeśli był wykonany commit
+git branch -D <nazwa>		usuwa gałąź <nazwa> jeśli nie był wykonany commit
+git branch -v				pokazuje gałęzie, oraz ich ostatnie zatwierdzone commity
+git branch --merged			pokazuje scalone gałęzie
+git branch --no-merged		pokazuje nie scalone gałęzie
+
