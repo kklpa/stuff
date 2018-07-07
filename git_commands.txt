@@ -18,3 +18,7 @@ git branch -v				pokazuje gałęzie, oraz ich ostatnie zatwierdzone commity
 git branch --merged			pokazuje scalone gałęzie
 git branch --no-merged		pokazuje nie scalone gałęzie
 
+git remote add <remote_name> <url>  konfiguracja zdalnego repo
+git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchnięcie
+git push                    wypchnięcie zmian na serwer
+git remote remove <nazwa>   usuwa konfigurację zdalnego repo
