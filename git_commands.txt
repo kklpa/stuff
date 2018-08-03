@@ -5,6 +5,8 @@ git commit					zapisuje zmiany w komicie
 paramter:
 -a, all						wszystkie zmienione pliki
 -m, message					nazwa commitu	
+git rm <nazwa>			usuwa <nazwa> z repozytorium(zostawia fizycznie)
+-r 				rekursywnie dla folderow
 
 git branch <nazwa>			tworzy nową gałąź <nazwa>
 git checkout <nazwa>		przełącza na gałąź <nazwa>
