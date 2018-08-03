@@ -4,12 +4,21 @@ git status					pokazuje aktualny stan plikow w repo
 git commit					zapisuje zmiany w komicie
 paramter:
 -a, all						wszystkie zmienione pliki
--m, message					nazwa commitu	
-git rm <nazwa>			usuwa <nazwa> z repozytorium(zostawia fizycznie)
--r 				rekursywnie dla folderow
+-m, message					nazwa komitu	
+git rm <nazwa>					usuwa <nazwa> z repozytorium(zostawia fizycznie)
+-r 						rekursywnie dla folderow
+git log						wyswietla comity(ma sporo flag dla poprawienia czytelnosci
+git ls-files					wyswietla zawartosc comitu
+-- usuwanie comitu
+najpierw git reset --hard <commit-id>			usuwa komit
+git reset --soft HEAD~1				resetuje wskaznik komitu do stanu z przed zatwierdzenia zmian
+nastepnie git reset HEAD <niechciane pliki/folder>	usuwa dodane pliki do komitu
+nastepnie git commit (-c ORIG_HEAD) 		jesli chcemy zachowac wiadomosc komitu
+nastepnie git push -- force			jesli chcemy nadpisac zmiany w zdalnym(jesli gdzies obecnie znajduje sie repo z niepozadanymi plikami, trzeba je tez wyczyscic, poniewaz nadpisze przy pierwszym pushu)
 
 git branch <nazwa>			tworzy nową gałąź <nazwa>
-git checkout <nazwa>		przełącza na gałąź <nazwa>
+git checkout <nazwa>		przelacza na galaz/komit <nazwa>
+				ustawia na dany HEAD, przy czym w logu widac tylko poprzednie komity w stosunku do obecnego
 git checkout -b <nazwa>		tworzy gałaź <nazwa> i się na nią przełącza
 git merge <nazwa>			przyłącza gałąź <nazwa> do obecnej gałęzi, na której pracujemy
 git status					powie więcej w przypadku konfliktów
