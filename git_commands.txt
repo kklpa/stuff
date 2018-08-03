@@ -34,3 +34,4 @@ git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchnię
 git push					wypchnięcie zmian na serwer
 git push <remote_repo_name> <branch>   wypchnięcie zmian do zdalnego repo w dany branch
 git remote remove <nazwa>   usuwa konfigurację zdalnego repo
+git pull origin other-branch		pobiera remote branch do origin
