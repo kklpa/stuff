@@ -16,21 +16,21 @@ nastepnie git reset HEAD <niechciane pliki/folder>	usuwa dodane pliki do komitu
 nastepnie git commit (-c ORIG_HEAD) 		jesli chcemy zachowac wiadomosc komitu
 nastepnie git push -- force			jesli chcemy nadpisac zmiany w zdalnym(jesli gdzies obecnie znajduje sie repo z niepozadanymi plikami, trzeba je tez wyczyscic, poniewaz nadpisze przy pierwszym pushu)
 
-git branch <nazwa>			tworzy nową gałąź <nazwa>
+git branch <nazwa>			tworzy nowa galaz <nazwa>
 git checkout <nazwa>		przelacza na galaz/komit <nazwa>
 				ustawia na dany HEAD, przy czym w logu widac tylko poprzednie komity w stosunku do obecnego
-git checkout -b <nazwa>		tworzy gałaź <nazwa> i się na nią przełącza
-git merge <nazwa>			przyłącza gałąź <nazwa> do obecnej gałęzi, na której pracujemy
-git status					powie więcej w przypadku konfliktów
+git checkout -b <nazwa>		tworzy galaz <nazwa> i sie na nia przelacza
+git merge <nazwa>			przylacza galaz <nazwa> do obecnej galezi, na której pracuje(robimy do mastara
+git status					powie wieej w przypadku konfliktów
 git mergetool				otwiera edytor i graficznie przedstawia konflikty
-git branch -d <nazwa>		usuwa gałąź <nazwa> jeśli był wykonany commit
-git branch -D <nazwa>		usuwa gałąź <nazwa> jeśli nie był wykonany commit
-git branch -v				pokazuje gałęzie, oraz ich ostatnie zatwierdzone commity
-git branch --merged			pokazuje scalone gałęzie
-git branch --no-merged		pokazuje nie scalone gałęzie
+git branch -d <nazwa>		usuwa galaz <nazwa> jesli byl wykonany commit
+git branch -D <nazwa>		usuwa galaz <nazwa> jesli nie bylwykonany commit
+git branch -v				pokazuje galezie, oraz ich ostatnie zatwierdzone commity
+git branch --merged			pokazuje scalone galezie
+git branch --no-merged		pokazuje nie scalone galezie
 
 git remote add <remote_name> <url>  konfiguracja zdalnego repo
-git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchnięcie
-git push					wypchnięcie zmian na serwer
-git push <remote_repo_name> <branch>   wypchnięcie zmian do zdalnego repo w dany branch
-git remote remove <nazwa>   usuwa konfigurację zdalnego repo
+git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchniecie
+git push					wypchniecie zmian na serwer
+git push <remote_repo_name> <branch>   wypchniecie zmian do zdalnego repo w dany branch
+git remote remove <nazwa>   usuwa konfiguracje zdalnego repo
