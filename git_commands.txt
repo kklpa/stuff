@@ -30,7 +30,6 @@ git branch --merged			pokazuje scalone galezie
 git branch --no-merged		pokazuje nie scalone galezie
 
 git remote add <remote_name> <url>  konfiguracja zdalnego repo
-<<<<<<< HEAD
 git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchniecie
 git push					wypchniecie zmian na serwer
 git push <remote_repo_name> <branch>   wypchniecie zmian do zdalnego repo w dany branch
@@ -41,4 +40,4 @@ git push					wypchnięcie zmian na serwer
 git push <remote_repo_name> <branch>   wypchnięcie zmian do zdalnego repo w dany branch
 git remote remove <nazwa>   usuwa konfigurację zdalnego repo
 git pull origin other-branch		pobiera remote branch do origin
->>>>>>> 8d3a074c20a593e951756231310c9019ef136ae1
+
