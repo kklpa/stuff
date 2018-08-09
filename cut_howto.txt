@@ -1,0 +1,10 @@
+cat client_update_run.txt | grep logged -B 1 | cut -d " " -f4 | grep -v logged | grep -v "\-\-"
+
+cut -d
+delimetr - separator
+" " spacja, ";" srednik, etc
+
+-f
+field - pole. Ktore pole po separatorze.
+
+grep -v usuwa znaki
