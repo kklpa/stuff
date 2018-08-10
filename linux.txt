@@ -1,0 +1,8 @@
+screen:
+screen -S <nazwa>	tworzy sesje <nazwa>
+screen -r <nazwa>	przelacza do sesji <nazwa>
+ctrl+a, esc		pozwala poruszac sie pobuforze screena. Esc lub q zeby wyjsc.
+
+bash:
+ctrl+u			czysci aktualnie wprowadzony tekst w lini polecenia
+ctrl+w			usuwa tylko ostatnie slowo z tekstu w lini polecenia
