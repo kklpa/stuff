@@ -15,6 +15,10 @@ git reset --soft HEAD~1				resetuje wskaznik komitu do stanu z przed zatwierdzen
 nastepnie git reset HEAD <niechciane pliki/folder>	usuwa dodane pliki do komitu
 nastepnie git commit (-c ORIG_HEAD) 		jesli chcemy zachowac wiadomosc komitu
 nastepnie git push -- force			jesli chcemy nadpisac zmiany w zdalnym(jesli gdzies obecnie znajduje sie repo z niepozadanymi plikami, trzeba je tez wyczyscic, poniewaz nadpisze przy pierwszym pushu)
+--usuwanie lokalnego, nadpisanego brancha, innym zdalnym
+git fetch --all
+git reset --hard origin/master
+git pull origin master		ze zdalnego orining, pobiera do master. Sprawdzic branch -v czy nazywa sie master. 
 
 git branch <nazwa>			tworzy nowa galaz <nazwa>
 git checkout <nazwa>		przelacza na galaz/komit <nazwa>
@@ -30,7 +34,7 @@ git branch --merged			pokazuje scalone galezie
 git branch --no-merged		pokazuje nie scalone galezie
 
 git remote add <remote_name> <url>  konfiguracja zdalnego repo
-git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchniecie
+git push -u bash master     konfiguracja upstream branch oraz pierwsze wypchniecie(chujowe jesli ustawia upstream, auto upstream to zlo)
 git push					wypchniecie zmian na serwer
 git push <remote_repo_name> <branch>   wypchniecie zmian do zdalnego repo w dany branch
 git remote remove <nazwa>   usuwa konfiguracje zdalnego repo
