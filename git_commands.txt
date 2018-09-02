@@ -40,5 +40,6 @@ git push <remote_repo_name> <branch>   wypchniecie zmian do zdalnego repo w dany
 git remote remove <nazwa>   usuwa konfiguracje zdalnego repo
 git pull origin other-branch		pobiera remote branch do origin/cos nie rozumiem - sprawdz przy nastepny pobieraniu brancha
 git fetch origin <remote_branch>	pobiera remote branch do origin. Sprawdz git branch -v i potem sie przelacz checkoutem
-
-
+t checkout <other_branch> <file>        ustawia wersje pliku z ostatniego komitu, wskazanego brancha do brancha w ktorym sie znajdujemy
+git checkout <commit_hash> <file_or_dir>	ustawia wersje plku ze wskazanego komitu, do brancha w ktorym sie znajdujemy
+git checkout <remote_name>/<branch_name> <file_or_dir>		ustawia wersje pliku wskazanego zdalnego komitu, do brancha w ktorym sie znajdujemy
