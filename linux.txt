@@ -5,4 +5,6 @@ ctrl+a, esc		pozwala poruszac sie pobuforze screena. Esc lub q zeby wyjsc.
 
 bash:
 ctrl+u			czysci aktualnie wprowadzony tekst w lini polecenia
-ctrl+w			usuwa tylko ostatnie slowo z tekstu w lini polecenia
+crl+w			usuwa tylko ostatnie slowo z tekstu w lini polecenia
+
+split -l 10 file	dzieli plik po 10 linijek kazdy
