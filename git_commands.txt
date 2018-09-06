@@ -20,6 +20,11 @@ git fetch --all
 git reset --hard origin/master
 git pull origin master		ze zdalnego orining, pobiera do master. Sprawdzic branch -v czy nazywa sie master. 
 
+--usuwanie zdalnego brancha
+git branch -d <branch_name>		najpierw usuwamy lokalnie
+git push <remote_name> --delete <branch_name>	usuwamy zdalnego brancha
+
+
 git branch <nazwa>			tworzy nowa galaz <nazwa>
 git checkout <nazwa>		przelacza na galaz/komit <nazwa>
 				ustawia na dany HEAD, przy czym w logu widac tylko poprzednie komity w stosunku do obecnego
