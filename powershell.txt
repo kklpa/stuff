@@ -1,0 +1,15 @@
+enable winrm local:
+winrm quickconfig
+check:
+winrm e winrm/config/listener 
+
+enable winrm remotly:
+mmc->add remote host GPO, remote host services
+in GPO administrative temp.\windows components\windows remote managment\winrm services enable allow remote server managment through winrm
+in services enable and run windows remote management
+
+
+manage remote host using powershell and winrm:
+
+Invoke-Command -ComputerName win10 -ScriptBlock { New-SmbShare -Name test -Path c:\test} -Credential (Get-Credential)
+
