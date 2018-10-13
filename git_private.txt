@@ -1,0 +1,11 @@
+on user@server
+create dir:
+mkdir /home/user/git/app.git
+init git:
+cd /home/user/git/app.git && git --bare init
+
+on client:
+create app, configure remote repo:
+git remote add app user@server:/home/user/git/app.git
+git push app branch
+
