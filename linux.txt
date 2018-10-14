@@ -8,3 +8,29 @@ ctrl+u			czysci aktualnie wprowadzony tekst w lini polecenia
 crl+w			usuwa tylko ostatnie slowo z tekstu w lini polecenia
 
 split -l 10 file	dzieli plik po 10 linijek kazdy
+
+permission:
+id user		show user groups
+groupadd group		add group
+gpasswd -a user group		add user to group
+gpasswd -n new_group old_group		rename group(all permissions stay)
+gpasswd -d user group		remove user from group
+
+chown user dir		change dir owner
+chown -R user dir	change owner of dir, all subdirs and files
+chgrp group dir		change dir group
+chgrp -R group dir 	change group of dir, all subdirs and files
+
+r	4
+w	2
+x	1
+none	0
+full	4+2+1=7
+r+x	4+1=5
+r+w	2+4=6
+
+owner:group:users
+example: -rw-r--r-- =644
+rwxrwxrwx	=777
+
+
