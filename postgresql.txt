@@ -2,3 +2,4 @@ psql
 \list	print databases
 \connect database	use db
 \dt	print database tables
+\d+ table_name		describe table
