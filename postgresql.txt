@@ -5,3 +5,7 @@ psql
 \d+ table_name		describe table
 copy <table_name> to <'path'> delimiter ',' CSV HEADER		export do csv z polami tabeli w naglowku, pola separowane przecinkiem
 copy <table_name> from <path> delimiter ','		import z csv, pola separowane przecinkiem
+
+create database <dbname>;
+create user <username> with encrypted password <password>;
+grant all privileges on database <dbname> to <username>;
