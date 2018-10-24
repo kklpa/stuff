@@ -3,9 +3,52 @@ psql
 \connect database	use db
 \dt	print database tables
 \d+ table_name		describe table
+\du	print users
 copy <table_name> to <'path'> delimiter ',' CSV HEADER		export do csv z polami tabeli w naglowku, pola separowane przecinkiem
 copy <table_name> from <path> delimiter ','		import z csv, pola separowane przecinkiem
 
 create database <dbname>;
-create user <username> with encrypted password <password>;
+create user <username> with encrypted password <'password'>;
 grant all privileges on database <dbname> to <username>;
+
+psql -U <username> -d <dbname> -h 127.0.0.1 -W
+
+import:
+psql -U <username> -d <dbname> -h <host> -W < source.sql
+
+export:
+pg_dump --username=<privilege_username> --file=<exported_db_filename> <dbname>
+
+
+create table owoc(
+	id serial primary key not null,
+	name text not null
+);
+
+
+create table kraj(
+	id serial primary key not null,
+	name text not null
+);
+
+create table waluta(
+	id serial primary key not null,
+	name text not null
+);
+
+alter table test drop id;
+alter table test add id serial primary key not null;
+alter table owoc add kraj_id int references kraj(id) not null;
+
+insert into <table>(<field1>, <field2>, <etc>) values (<'string'>, <int>, <etc>, <default> for autoincrement field); 
+insert into owoc(id, name, kraj_id) values (default, 'brzoskwinia', (select id from kraj where name='slowacja'));
+
+select owoc.name, kraj.name, waluta.name 
+from owoc 
+inner join kraj on owoc.kraj_id = kraj.id 
+inner join waluta on kraj.waluta = waluta.name 
+where waluta.name = 'zloty';
+
+select owoc.id, owoc.name, kraj.name from owoc inner join kraj on owoc.kraj_id = kraj.id;
+
+
