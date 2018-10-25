@@ -1,0 +1,4 @@
+mdadm --create --verbose /dev/md0 --level=mirror --raid-devices=2 /dev/sdb /dev/sdc
+dd if=/dev/sda of=/sdb/md0
+
+Dont edit grub, fstab. Should work.

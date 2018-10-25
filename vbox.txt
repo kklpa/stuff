@@ -1,0 +1,10 @@
+vboxmanage <command> <vm_name> <command_params>
+
+vboxmanage <command> for info about command
+
+ex.
+vboxmanage snapshot deb take init
+
+vboxmanage snapshot deb restore init
+
+vboxmanage snapshot deb delete init

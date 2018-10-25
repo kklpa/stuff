@@ -17,7 +17,7 @@ import:
 psql -U <username> -d <dbname> -h <host> -W < source.sql
 
 export:
-pg_dump --username=<privilege_username> --file=<exported_db_filename> <dbname>
+pg_dump --username=<privilege_username> --file=<exported_db_filename> <dbname> -h 127.0.0.1
 
 
 create table owoc(
