@@ -2,3 +2,12 @@ mdadm --create --verbose /dev/md0 --level=mirror --raid-devices=2 /dev/sdb /dev/
 dd if=/dev/sda of=/sdb/md0
 
 Dont edit grub, fstab. Should work.
+
+
+mdadm --fail /dev/md0 /dev/sda1 	make fail status (status is auto change on disk fails
+
+mdadm --remove /dev/md0 /dev/sda1	remove disk from array
+
+mdadm --add /dev/md0 /dev/sdb1		add disk to array
+
+mdadm -D /dev/md0		array status
