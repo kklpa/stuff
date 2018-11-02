@@ -50,3 +50,5 @@ inner join waluta on kraj.waluta = waluta.name
 where waluta.name = 'zloty';
 
 select owoc.id, owoc.name, kraj.name from owoc inner join kraj on owoc.kraj_id = kraj.id;
+
+alter sequence homeb_app_zakup_id_seq restart with 2245;
