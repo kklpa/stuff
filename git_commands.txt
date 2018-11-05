@@ -56,3 +56,13 @@ someone:master is up to date with all commits from me:master. Try switching the 
 Click on switching the base on this page. Then you get to see all the commits made to someone/foobar after the day you forked it.
 Click on Create pull request. Give the pull request a title and maybe a description and click Create pull request.
 On the next page, scroll to the bottom of the page and click Merge pull request and Confirm merge. Your Git repository me/foobar will be updated.
+
+CONTRIBUTORS
+as owner:
+go into repo were u wanna give push permissions/settings/collabolators/ search nickname or email and send invite
+
+as some1:
+add remote repo to owner patch
+git add remote local_repo_name https://github.com/owner/repo
+git pull/push
+
