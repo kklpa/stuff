@@ -17,12 +17,7 @@ import:
 psql -U <username> -d <dbname> -h <host> -W < source.sql
 
 export:
-<<<<<<< HEAD
 pg_dump --username=<privilege_username> --file=<exported_db_filename> <dbname> -h 127.0.0.1
-=======
-pg_dump --username=<privilege_username> --file=<exported_db_filename> <dbname>
->>>>>>> d21fa874b7e305b8af347af36221cdbfd2a10360
-
 
 create table owoc(
 	id serial primary key not null,
@@ -55,8 +50,4 @@ where waluta.name = 'zloty';
 
 select owoc.id, owoc.name, kraj.name from owoc inner join kraj on owoc.kraj_id = kraj.id;
 
-<<<<<<< HEAD
-
-=======
 alter sequence homeb_app_zakup_id_seq restart with 2245;
->>>>>>> d21fa874b7e305b8af347af36221cdbfd2a10360
