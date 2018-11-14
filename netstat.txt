@@ -1,0 +1,8 @@
+netstat
+
+-u udp
+-t tcp
+-a all ?
+-p connectet
+-c automiatic refresh
+-n host as ip
