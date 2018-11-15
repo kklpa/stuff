@@ -1,15 +1,88 @@
-enable winrm local:
-winrm quickconfig
-check:
-winrm e winrm/config/listener 
+szegoly usera:
+net user <name>
+net user <name> /domain
 
-enable winrm remotly:
-mmc->add remote host GPO, remote host services
-in GPO administrative temp.\windows components\windows remote managment\winrm services enable allow remote server managment through winrm
-in services enable and run windows remote management
+Ostatnio zalogowany:
+get-aduser -identity <user_name> -properties "LastLogonDate"
+
+odblokowanie konta
+Unlock-ADAccount -Identity <username>
+
+zablokowanie konta
+Disable-ADAccount -identity <username>
+
+grupy w domenie:
+net group /domain
+
+zdalne udzia³y:
+get-wmiobject -class win32_share -computername <host>	opcjonalnie - credential
+
+interfejsy sieciowe:
+get-netadapter
+
+obecna konfiguracja sieci:
+get-netipconfiguration
+
+konfiguracja adresacji:
+net-newipaddress -interfaceindex <id> -ipaddress <ip_address> -prefixlength <maks_length> -defaultgateway <gw>
+set-dnsclientserveraddress -intefaceindex <id> -serveraddresses adres1, adres2
+
+dolaczanie do domeny:
+add-computer -domainname <domain_name>
+
+zmiana nazwy hosta:
+rename-computer -newname <name> -localcredential <user>
+rename-computer -newname <name> -domaincredential <user>
+
+restart:
+restart-computer	(empty args if local)
+restart-computer -computername "<computer_name1>", "<computer_name2>"	for remote
+
+listowanie sesji:
+query session /server:<hostname>
+
+zamykanie sesji:
+logoff <session_id> /server:<hostname>
+
+info o hoscie(last boot time i w chuj innych):
+systeminfo	local
+systeminfo /s <host>	for remote
+
+Zwraca cz³onkowstwo usera
+Get-ADPrincipalGroupMembership -Identity konradkarasinski | Select-String CN
+
+zwraca kompa
+get-adcomputer <hostname> lub -filter 'name -like "123*5"'
+
+zwraca organization unit:
+get-ADorganizationunit -filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
+
+zwraca grupe:
+get-adgroup -filter 'name -like "*<search_term>*" | format-table samaccountname, distinguishedname -A
+
+zwraca czlonkow grupy:
+Get-adgroupmember -identity <group_name>
+
+zwraca czlonkow wyszukanych grup:
+Get-ADGroup -Filter "name -like '*<search_term*'" | Get-ADGroupMember | Format-Table name, objectclass, distinguishedname -A
+
+dodaje grupe do usera:
+Add-ADGroupMemeber -identity <group_name> -members <username>, <username> -credential
+
+dodaje usera do grupy:
+Add-ADPrincipalGroupMembership -identity <username> -memberOf <group_name> -credential <adm_user>
+
+pagefile size:  (wymaga grupy "Remote Management Users")
+wmic pagefile list
+wmic /node:<host> pagefile list
+
+szukanie plikow:
+get-childitem -path <patch> -filter <name*wildcard> 	-Recurse przeszkuje podkatalogi 
+| Where-Object { $_.Attributes -ne "Directory"}
 
 
-manage remote host using powershell and winrm:
 
-Invoke-Command -ComputerName win10 -ScriptBlock { New-SmbShare -Name test -Path c:\test} -Credential (Get-Credential)
+
+
+
 
