@@ -11,8 +11,29 @@ Unlock-ADAccount -Identity <username>
 zablokowanie konta
 Disable-ADAccount -identity <username>
 
+Zwraca cz³onkowstwo usera
+Get-ADPrincipalGroupMembership -Identity konradkarasinski | Select-String CN
+
 grupy w domenie:
 net group /domain
+
+zwraca organization unit:
+get-ADorganizationunit -filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
+
+zwraca grupe:
+get-adgroup -filter 'name -like "*<search_term>*" | format-table samaccountname, distinguishedname -A
+
+zwraca czlonkow grupy:
+Get-adgroupmember -identity <group_name>
+
+zwraca czlonkow wyszukanych grup:
+Get-ADGroup -Filter "name -like '*<search_term*'" | Get-ADGroupMember | Format-Table name, objectclass, distinguishedname -A
+
+dodaje grupe do usera:
+Add-ADGroupMemeber -identity <group_name> -members <username>, <username> -credential
+
+dodaje usera do grupy:
+Add-ADPrincipalGroupMembership -identity <username> -memberOf <group_name> -credential <adm_user>
 
 zdalne udzia³y:
 get-wmiobject -class win32_share -computername <host>	opcjonalnie - credential
@@ -48,29 +69,12 @@ info o hoscie(last boot time i w chuj innych):
 systeminfo	local
 systeminfo /s <host>	for remote
 
-Zwraca cz³onkowstwo usera
-Get-ADPrincipalGroupMembership -Identity konradkarasinski | Select-String CN
+
 
 zwraca kompa
 get-adcomputer <hostname> lub -filter 'name -like "123*5"'
 
-zwraca organization unit:
-get-ADorganizationunit -filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
 
-zwraca grupe:
-get-adgroup -filter 'name -like "*<search_term>*" | format-table samaccountname, distinguishedname -A
-
-zwraca czlonkow grupy:
-Get-adgroupmember -identity <group_name>
-
-zwraca czlonkow wyszukanych grup:
-Get-ADGroup -Filter "name -like '*<search_term*'" | Get-ADGroupMember | Format-Table name, objectclass, distinguishedname -A
-
-dodaje grupe do usera:
-Add-ADGroupMemeber -identity <group_name> -members <username>, <username> -credential
-
-dodaje usera do grupy:
-Add-ADPrincipalGroupMembership -identity <username> -memberOf <group_name> -credential <adm_user>
 
 pagefile size:  (wymaga grupy "Remote Management Users")
 wmic pagefile list
