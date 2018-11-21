@@ -35,6 +35,9 @@ Add-ADGroupMemeber -identity <group_name> -members <username>, <username> -crede
 dodaje usera do grupy:
 Add-ADPrincipalGroupMembership -identity <username> -memberOf <group_name> -credential <adm_user>
 
+usuwa userow z grupy:
+Remove-ADGroupmember -Identity grup -Members user1, user2
+
 zdalne udzia³y:
 get-wmiobject -class win32_share -computername <host>	opcjonalnie - credential
 
