@@ -38,13 +38,16 @@ Add-ADPrincipalGroupMembership -identity <username> -memberOf <group_name> -cred
 usuwa userow z grupy:
 Remove-ADGroupmember -Identity grup -Members user1, user2
 
-zdalne udzialy:
+listuje zdalne udzialy:
 get-wmiobject -class win32_share -computername <host>	opcjonalnie - credential
 
 tworzy folder
 New-Item "\\localhost\c$\asd" -ItemType dir
 
-new-smbshare  sprawdz
+towrzenie zdalnego udzialu
+uruchamiamy wmic
+/node:komputer /user:"domena\user"
+share call create "", "komentarz", "maks polaczen[liczba]", "nazwa udzialu", "", "c:\path", 0
 
 interfejsy sieciowe:
 get-netadapter
