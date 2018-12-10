@@ -18,7 +18,7 @@ grupy w domenie:
 net group /domain
 
 zwraca organization unit:
-get-ADorganizationunit -filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
+Get-ADOrganizationalUnit-filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
 
 zwraca grupe:
 get-adgroup -filter 'name -like "*<search_term>*" | format-table samaccountname, distinguishedname -A
@@ -96,7 +96,8 @@ get-childitem -path <patch> -filter <name*wildcard> 	-Recurse przeszkuje podkata
 | Where-Object { $_.Attributes -ne "Directory"}
 
 
-
+pstools
+psexec \\host command
 
 
 

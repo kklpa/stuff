@@ -33,4 +33,4 @@ owner:group:users
 example: -rw-r--r-- =644
 rwxrwxrwx	=777
 
-
+diff -y, --side-by-side
