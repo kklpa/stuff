@@ -1,3 +1,10 @@
+przeszukiwanie plikow
+grep -rnw '/path/' -e 'pattern'
+-r recursive
+-n line number (dont work?)
+-w looking for a whole word
+--exclude, --include, --exclude-dir
+
 screen:
 screen -S <nazwa>	tworzy sesje <nazwa>
 screen -r <nazwa>	przelacza do sesji <nazwa>
