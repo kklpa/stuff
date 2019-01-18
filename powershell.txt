@@ -95,6 +95,7 @@ logoff <session_id> /server:<hostname>
 info o hoscie(last boot time i w chuj innych, uptime, system manufacturer, system model):
 systeminfo	local
 systeminfo /s <host>	for remote
+| select-string -pattern "boot"
 
 
 
