@@ -13,15 +13,18 @@ Disable-ADAccount -identity <username>
 
 Zwraca cz³onkowstwo usera
 Get-ADPrincipalGroupMembership -Identity konradkarasinski | Select-String CN
+Get-ADPrincipalGroupMembership -Identity marekzimolzak | Select-Object name 
+
+Get-ADPrincipalGroupMembership andrzejanasiewicz | where {$_.name -like "esx*"} | select name
 
 grupy w domenie:
 net group /domain
 
 zwraca organization unit:
-get-ADorganizationunit -filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
+Get-ADOrganizationalUnit-filter 'name -like "*<search_term>*" | format-table name, distinguishedname  (dwa istotne pola)
 
 zwraca grupe:
-get-adgroup -filter 'name -like "*<search_term>*" | format-table samaccountname, distinguishedname -A
+get-adgroup -filter 'name -like "*<search_term>*"' | format-table samaccountname, distinguishedname -A
 
 zwraca czlonkow grupy:
 Get-adgroupmember -identity <group_name>
@@ -40,6 +43,19 @@ Remove-ADGroupmember -Identity grup -Members user1, user2
 
 listuje zdalne udzialy:
 get-wmiobject -class win32_share -computername <host>	opcjonalnie - credential
+
+listuje wolne miejsce dysków:
+Invoke-Command -ComputerName SRV2 {Get-PSDrive C}
+
+listuje foldery:
+get-childitem \\serwer\dysk$\
+
+listuje zawartoœæ:
+get-content c:\dir\file.csv   (test on remote)
+
+szukanie plikow:
+get-childitem -path <patch> -filter <name*wildcard> 	-Recurse przeszkuje podkatalogi 
+| Where-Object { $_.Attributes -ne "Directory"}
 
 tworzy folder
 New-Item "\\localhost\c$\asd" -ItemType dir
@@ -76,9 +92,10 @@ query session /server:<hostname>
 zamykanie sesji:
 logoff <session_id> /server:<hostname>
 
-info o hoscie(last boot time i w chuj innych):
+info o hoscie(last boot time i w chuj innych, uptime, system manufacturer, system model):
 systeminfo	local
 systeminfo /s <host>	for remote
+| select-string -pattern "boot"
 
 
 
@@ -91,13 +108,8 @@ pagefile size:  (wymaga grupy "Remote Management Users")
 wmic pagefile list
 wmic /node:<host> pagefile list
 
-szukanie plikow:
-get-childitem -path <patch> -filter <name*wildcard> 	-Recurse przeszkuje podkatalogi 
-| Where-Object { $_.Attributes -ne "Directory"}
 
 
-
-
-
-
+pstools
+psexec \\host command
 
