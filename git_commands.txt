@@ -8,6 +8,8 @@ paramter:
 git rm <nazwa>					usuwa <nazwa> z repozytorium(zostawia fizycznie)
 -r 						rekursywnie dla folderow
 git log						wyswietla comity(ma sporo flag dla poprawienia czytelnosci
+--oneline -2					jedna linia, ilosc comitow
+--patch						pokazuje zmiany w sciezce/pliku
 git ls-files					wyswietla zawartosc comitu
 -- usuwanie comitu
 najpierw git reset --hard <commit-id>			usuwa komit
