@@ -7,6 +7,8 @@ paramter:
 -m, message					nazwa komitu	
 git rm <nazwa>					usuwa <nazwa> z repozytorium(zostawia fizycznie)
 -r 						rekursywnie dla folderow
+git diff file					pokazuje roznice w pliku
+git diff --cached file				pokazuje roznice dodanym pliku przez git add (?)
 git log						wyswietla comity(ma sporo flag dla poprawienia czytelnosci
 --oneline -2					jedna linia, ilosc comitow
 --patch						pokazuje zmiany w sciezce/pliku
